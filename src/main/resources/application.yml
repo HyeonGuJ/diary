@@ -1,2 +1,14 @@
 server:
   port: 8089
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/_diary
+    username: root
+    password:
+  mvc:
+    view:
+      suffix: html
+
+
