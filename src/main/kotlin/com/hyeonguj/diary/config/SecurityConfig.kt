@@ -7,7 +7,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
 import org.springframework.security.crypto.password.PasswordEncoder
-/*
+
 
 @EnableWebSecurity
 class SecurityConfig(@Autowired private val accountService: AccountService,
@@ -15,7 +15,7 @@ class SecurityConfig(@Autowired private val accountService: AccountService,
 ): WebSecurityConfigurerAdapter() {
 
     companion object {
-        const val LOGIN_SUCCESS_URL: String = "/view/success"
+        const val LOGIN_SUCCESS_URL: String = "/api/welcome"
     }
 
     override fun configure(auth: AuthenticationManagerBuilder) {
@@ -33,4 +33,4 @@ class SecurityConfig(@Autowired private val accountService: AccountService,
             .authorizeRequests()
             .anyRequest().authenticated()
     }
-}*/
+}
