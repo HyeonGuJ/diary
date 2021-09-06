@@ -1,0 +1,23 @@
+version: '3.6'
+services:
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: _diary
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_ROOT_HOST: '%'
+    volumes:
+      - ./mysql/conf:/etc/mysql/conf.d
+      - ./mysql/initdb:/docker-entrypoint-initdb.d/
+    ports:
+      - "13306:3306"
+  redis:
+    image: redis:alpine
+    command: redis-server --port 6379
+    container_name: redis
+    hostname: redis
+    labels:
+      - "name=redis"
+      - "mode=standalone"
+    ports:
+      - 6379:6379
